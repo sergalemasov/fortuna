@@ -1,42 +1,62 @@
 @import '../vars/mixins';
 
 .header-social {
-    width: 210px;
+    width: 221px;
     display: flex;
     justify-content: space-between;
 
+    &__wrap {
+        position: relative;
+        height: 52px;
+        width: 62px;
+    }
+
     &__icon {
-        height: 49px;
-        width: 49px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        height: 140px;
+        width: 200px;
         background-position: center;
         background-repeat: no-repeat;
 
         &--fb {
-            background-image: url(../img/fb-top1.png);
-            transform: translate(-1px, 0);
+            background-image: url(../img/fb-top.png);
 
-            .header-social__link:hover & {
-                background-image: url(../img/fb-top.png);
-                transform: translate(-1px, 0);
+            .header-social__link:hover + & {
+                background-image: url(../img/fb-top1.png);
+            }
+
+            .header-social__link:active + & {
+                background-image: url(../img/fb-top2.png);
+                transform: translate(-50%, calc(-50% + 28px));
             }
         }
 
         &--vk {
-            background-image: url(../img/vk-top1.png);
-            transform: translate(-1px, 1px);
+            background-image: url(../img/vk-top.png);
 
-            .header-social__link:hover & {
-                background-image: url(../img/vk-top.png);
-                transform: translate(-1px, 0);
+            .header-social__link:hover + & {
+                background-image: url(../img/vk-top1.png);
+            }
+
+            .header-social__link:active + & {
+                background-image: url(../img/vk-top2.png);
+                transform: translate(-50%, calc(-50% + 27px));
             }
         }
 
         &--mail {
-            background-image: url(../img/mail-top1.png);
+            background-image: url(../img/mail-top.png);
 
-            .header-social__link:hover & {
-                background-image: url(../img/mail-top.png);
-                transform: translate(1px, 0);
+            .header-social__link:hover + & {
+                background-image: url(../img/mail-top1.png);
+            }
+
+            .header-social__link:active + & {
+                background-image: url(../img/mail-top2.png);
+                transform: translate(-50%, calc(-50% + 27px));
             }
         }
     }
@@ -45,14 +65,9 @@
         .no-tap-highlight();
         cursor: pointer;
         display: block;
-        background-repeat: no-repeat;
-        height: 49px;
-        width: 49px;
-        background-image: url(../img/bg-social-top.png);
-
-        &:active {
-            background-image: url(../img/bg-social-top-hover.png);
-        }
-
+        height: 100%;
+        width: 100%;
+        position: relative;
+        z-index: 1;
     }
 }

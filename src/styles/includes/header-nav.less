@@ -11,26 +11,43 @@
         align-items: center;
         font-size: 14px;
         font-weight: 700;
-        width: 103px;
-        height: 57px;
+        height: 100%;
+        width: 112px;
+        box-sizing: border-box;
+        border-left: 2px solid @header-hav-border-color;
         color: @nav-text-color;
-        background-image: url(../img/btn-top.png);
-        background-position: top;
-        background-repeat: no-repeat;
-        margin-left: 14px;
         text-decoration: none;
         text-align: center;
         transition: color 0.1s ease;
         .no-tap-highlight();
         outline: none;
+        position: relative;
+
+        &:last-child {
+            border-right: 2px solid @header-hav-border-color;
+        }
 
         &:hover {
             color: @nav-hover-text-color;
         }
 
+        &:after {
+            display: none;
+            position: absolute;
+            content: ' ';
+            background: url(../img/header-nav-border.png) no-repeat left top;
+            width: 146px;
+            height: 38px;
+            bottom: -15px;
+            left: -18px;
+            z-index: 1;
+        }
+
         &_active,
         &:active {
-            background-image: url(../img/btn-active-top.png);
+            &:after {
+                display: block;
+            }
         }
 
         &_active {

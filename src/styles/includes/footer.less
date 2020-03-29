@@ -14,7 +14,7 @@
         width: 1920px;
         left: 50%;
         transform: translateX(-50%);
-        background-color: #250503;
+        background-color: @footer-background-color;
     }
 
     &__content {
@@ -29,26 +29,11 @@
 
     &__panel {
         width: 1920px;
-        height: 70px;
-        background: url('../img/footer-panel.png') no-repeat center bottom;
         position: absolute;
         left: 0;
-
-        &_top {
-            top: -10px;
-        }
-
-        &_bottom {
-            bottom: -11px;
-        }
-    }
-
-    &__divider {
-        background: url('../img/divider.png') no-repeat center bottom;
-        width: 1118px;
-        height: 34px;
-        margin: auto auto 0;
-        transform: translateX(5px);
+        bottom: 0;
+        background: url('../img/footer-panel.png') no-repeat center bottom;
+        height: 62px;
     }
 
     &__message {
@@ -58,10 +43,10 @@
         font-size: 24px;
         color: @footer-message-color;
         line-height: 28px;
-        margin-top: 6px;
+        margin-top: auto;
     }
 
     &__social {
-        margin: 42px auto 102px;
+        margin: 30px auto 119px;
     }
 }
