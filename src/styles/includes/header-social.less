@@ -1,0 +1,58 @@
+@import '../vars/mixins';
+
+.header-social {
+    width: 210px;
+    display: flex;
+    justify-content: space-between;
+
+    &__icon {
+        height: 49px;
+        width: 49px;
+        background-position: center;
+        background-repeat: no-repeat;
+
+        &--fb {
+            background-image: url(../img/fb-top1.png);
+            transform: translate(-1px, 0);
+
+            .header-social__link:hover & {
+                background-image: url(../img/fb-top.png);
+                transform: translate(-1px, 0);
+            }
+        }
+
+        &--vk {
+            background-image: url(../img/vk-top1.png);
+            transform: translate(-1px, 1px);
+
+            .header-social__link:hover & {
+                background-image: url(../img/vk-top.png);
+                transform: translate(-1px, 0);
+            }
+        }
+
+        &--mail {
+            background-image: url(../img/mail-top1.png);
+
+            .header-social__link:hover & {
+                background-image: url(../img/mail-top.png);
+                transform: translate(1px, 0);
+            }
+        }
+    }
+
+    &__link {
+        .no-tap-highlight();
+        cursor: pointer;
+        display: block;
+        background-repeat: no-repeat;
+        height: 49px;
+        width: 49px;
+        background-image: url(../img/bg-social-top.png);
+
+        &:active {
+            background-image: url(../img/bg-social-top-hover.png);
+        }
+
+    }
+}

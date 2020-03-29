@@ -1,0 +1,43 @@
+@import '../vars/colors';
+@import '../vars/mixins';
+
+.header-nav {
+    display: flex;
+
+    &__btn {
+        cursor: pointer;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 14px;
+        font-weight: 700;
+        width: 103px;
+        height: 57px;
+        color: @nav-text-color;
+        background-image: url(../img/btn-top.png);
+        background-position: top;
+        background-repeat: no-repeat;
+        margin-left: 14px;
+        text-decoration: none;
+        text-align: center;
+        transition: color 0.1s ease;
+        .no-tap-highlight();
+        outline: none;
+
+        &:hover {
+            color: @nav-hover-text-color;
+        }
+
+        &_active,
+        &:active {
+            background-image: url(../img/btn-active-top.png);
+        }
+
+        &_active {
+            &:hover {
+                color: @nav-text-color;
+                cursor: default;
+            }
+        }
+    }
+}

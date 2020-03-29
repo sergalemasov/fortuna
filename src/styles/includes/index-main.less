@@ -1,0 +1,49 @@
+@import '../vars/dimensions.less';
+@import '../vars/colors.less';
+@import '../vars/mixins.less';
+
+.index-main {
+    min-width: @content-width-lg;
+    position: relative;
+
+    &__content {
+        width: @content-width-lg;
+        margin: 0 auto;
+        position: relative;
+        height: 695px;
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__startscreen {
+        background: url(../img/startscreen.png) no-repeat left top;
+        position: absolute;
+        top: -91px;
+        left: -131px;
+        width: 1331px;
+        height: 789px;
+    }
+
+    &__mobile {
+        width: 866px;
+        height: 450px;
+        background: url(../img/mobile.png) no-repeat center top;
+        position: absolute;
+        top: 405px;
+        left: 50%;
+        transform: translateX(calc(-50% + 8px));
+        z-index: 1;
+    }
+
+    &__play {
+        position: absolute;
+        z-index: 2;
+        width: 462px;
+        height: 98px;
+        background: url(../img/play.png) no-repeat;
+        bottom: -44px;
+        left: 215px;
+        cursor: pointer;
+        .no-tap-highlight();
+    }
+}
